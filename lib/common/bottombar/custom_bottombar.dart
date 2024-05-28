@@ -13,7 +13,7 @@ class CustomBottomBar extends GetView<CustomBottomBarController> {
     Get.put(CustomBottomBarController());
     return Obx(() => Container(
           padding: const EdgeInsets.fromLTRB(20, 0, 20, 15),
-          color: CustomColors.pacificBlue,
+          color: CustomColors.transparent,
           child: ClipRRect(
             borderRadius: BorderRadius.circular(15.0),
             child: BottomNavigationBar(
@@ -58,8 +58,8 @@ class CustomBottomBar extends GetView<CustomBottomBarController> {
                 ),
               ],
               onTap: (index) {
-                controller.changeIndex(index);
                 Get.offNamedUntil(Routes.mainScreen, (route) => true);
+                controller.changeIndex(index);
               },
             ),
           ),

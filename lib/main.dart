@@ -14,7 +14,6 @@ void main() async {
     debugShowCheckedModeBanner: false,
     translations: MyLocale(),
     locale: localeController.initialLang,
-    title: 'Flutter Demo',
     theme: ThemeData(
       useMaterial3: true,
     ),

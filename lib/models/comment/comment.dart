@@ -1,13 +1,17 @@
-import 'package:flutter/material.dart';
-
 class Comment {
-  String username;
-  String comment;
-  Image userPicture;
-
+  int? id;
+  String? note;
+  String? recordAddBy;
   Comment(
-    this.username,
-    this.comment,
-    this.userPicture,
+    this.id,
+    this.note,
+    this.recordAddBy,
   );
+  factory Comment.fromJson(json) {
+    return Comment(
+      json['id'],
+      json['note'],
+      json['recordAddBy'],
+    );
+  }
 }

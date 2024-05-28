@@ -1,5 +1,15 @@
 class Consts {
+  /* ------------------- API --------------------- */
+
+  static String base = 'http://192.236.163.206:7001';
+  static String baseUrl = '$base/api';
+  static String accountUrl = '$baseUrl/Account'; // 2060015
+  static String operationsUrl = '$baseUrl/Operations';
+  static String autoCompleteUrl = '$baseUrl/AutoComplete';
+  static String lookupsUrl = '$autoCompleteUrl/Lookups';
+
   /* ------------------- STATIC ------------------- */
+  static String loginScreenSentance = 'loginScreenSentance';
   static String projectName = 'operations';
   static String email = 'email';
   static String password = 'password';
@@ -19,20 +29,22 @@ class Consts {
   static String customerName = 'customerName';
   static String orderStatus = 'orderStatus';
   static String orderDate = 'orderDate';
-  static String from = 'from';
-  static String to = 'to';
+  static String expiredDate = 'expiredDate';
+  static String fromDate = 'fromDate';
+  static String toDate = 'toDate';
   static String dashboard = 'dashboard';
   static String revenue = 'revenue';
   static String notifications = 'notifications';
   static String analyze = 'analyze';
   static String storage = 'storage';
-  static String subcontractors = 'subcontractor';
+  static String subcontractor = 'subcontractor';
   static String comments = 'comments';
   static String installation = 'installation';
   static String description = 'description';
   static String admin = 'admin';
   static String adminName = 'adminName';
   static String save = 'save';
+  static String edit = 'edit';
   static String addAdmin = 'addAdmin';
   static String admins = 'admins';
   static String confirm = 'confirm';
@@ -47,5 +59,44 @@ class Consts {
   static String note = 'note';
   static String addCost = 'addCost';
   static String comment = 'comment';
+  static String logout = 'logout';
   static String emptyString = '';
+  static String sales = 'sales';
+  static String operations = 'operations';
+  static String maintenance = 'maintenance';
+  static String hr = 'hr';
+  static String id = 'id';
+  static String name = 'name';
+  static String mobile = 'mobile';
+  static String buildingAddress = 'buildingAddress';
+  static String date = 'date';
+  static String govern = 'govern';
+  static String city = 'city';
+  static String map = 'map';
+  static String customerInfo = 'customerInfo';
+  static String buildingInfo = 'buildingInfo';
+  static String itemName = 'itemName';
+  static String unit = 'unit';
+  static String quantity = 'quantity';
+  static String buildingName = 'buildingName';
+  static String floor = 'floor';
+  static String salesman = 'salesman';
+  static String nationalNumber = 'nationalNumber';
+  static String cost = 'cost';
+  static String subContractorCompany = 'subContractorCompany';
+  static String country = 'country';
+  static String haveInsurance = 'haveInsurance';
+  static String subContractorOrders = 'subContractorOrders';
+  static String processes = 'processes';
+  static String sortedBy = 'sortedBy';
+  static String stages = 'stages';
+  static String stage = 'stage';
+  static String userType = 'userType';
+  static String filter = 'filter';
+  static String client = 'clinet';
+
+  /*-------------- KEYS -------------- */
+  static String tokenKey = 'token';
+  static String clientTokenKey = 'clientToken';
+  static String userKey = 'userKey';
 }

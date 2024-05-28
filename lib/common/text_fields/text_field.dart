@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:operations/utils/colors.dart';
 
 // ignore: must_be_immutable
 class CustomTextFormField extends StatelessWidget {
@@ -7,6 +8,7 @@ class CustomTextFormField extends StatelessWidget {
   late int maxLines;
   late Function validator;
   late Function onTap;
+  late Function onChanged;
   late bool obscureText;
   late TextInputType textInputType;
   late String labelText;
@@ -14,6 +16,9 @@ class CustomTextFormField extends StatelessWidget {
   late double widthRatio;
   late double heightRatio;
   late Color borderColor;
+  late Color textColor;
+  late TextAlign textAlign;
+  late bool readOnly;
   CustomTextFormField({
     super.key,
     required this.maxLines,
@@ -23,10 +28,14 @@ class CustomTextFormField extends StatelessWidget {
     required this.obscureText,
     required this.validator,
     required this.onTap,
+    required this.onChanged,
     required this.fillColor,
     required this.widthRatio,
     required this.heightRatio,
     required this.borderColor,
+    required this.textColor,
+    required this.textAlign,
+    required this.readOnly,
   });
 
   @override
@@ -35,14 +44,39 @@ class CustomTextFormField extends StatelessWidget {
       height: MediaQuery.of(context).size.height * heightRatio,
       width: MediaQuery.of(context).size.width * widthRatio,
       child: TextFormField(
+        textAlign: textAlign,
+        style: TextStyle(color: textColor, fontSize: 12),
+        cursorColor: CustomColors.lightTan,
+        cursorErrorColor: CustomColors.lightTan,
         controller: controller,
         maxLines: maxLines,
         validator: (value) => validator(value),
         onTap: () => onTap(context, controller),
+        onChanged: (value) => onChanged(value),
         obscureText: obscureText,
+        readOnly: readOnly,
         keyboardType: textInputType,
         decoration: InputDecoration(
           filled: true,
+          errorBorder: const OutlineInputBorder(
+            borderRadius: BorderRadius.all(
+              Radius.circular(10),
+            ),
+            borderSide: BorderSide(
+              color: CustomColors.lightRed,
+              width: 0.5,
+            ),
+          ),
+          errorStyle: const TextStyle(color: CustomColors.lightRed),
+          focusedErrorBorder: const OutlineInputBorder(
+            borderRadius: BorderRadius.all(
+              Radius.circular(10),
+            ),
+            borderSide: BorderSide(
+              color: CustomColors.lightRed,
+              width: 0.5,
+            ),
+          ),
           fillColor: fillColor,
           enabledBorder: OutlineInputBorder(
             borderRadius: const BorderRadius.all(
@@ -55,16 +89,20 @@ class CustomTextFormField extends StatelessWidget {
           ),
           focusedBorder: OutlineInputBorder(
             borderRadius: const BorderRadius.all(
-              Radius.circular(20),
+              Radius.circular(10),
             ),
             borderSide: BorderSide(
               color: borderColor,
               width: 0.5,
             ),
           ),
+          hintStyle: TextStyle(
+            color: textColor,
+            fontSize: 12,
+          ),
           hintText: labelText.tr,
           contentPadding:
-              const EdgeInsets.symmetric(vertical: 15.0, horizontal: 20.0),
+              const EdgeInsets.symmetric(vertical: 15.0, horizontal: 10.0),
         ),
       ),
     );
